@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/comment.css">
+    <script src="../static/jquery/jquery.min.js"></script>
+    <script src="../static/gverify.js"></script>
+    <script src="../static/validate/jquery.validate.min.js"></script>
+    <script src="../static/validate/localization/messages_zh.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    input {
+        outline: none;
+    }
+
+    .login_title {
+        height: 95px;
+        width: 100%;
+    }
+
+    .login_info {
+        width: 920px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 5;
+    }
+
+    .login_info .logo {
+        float: left;
+        width: 290px;
+        height: 70px;
+    }
+
+    .login_info span.welcome {
+        color: #666666;
+        border-left: 1px #eee solid;
+        width: 290px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 28px;
+        margin: 26px 0px 0px 15px;
+        float: left;
+        padding: 0px 15px;
+    }
+
+    .login_info .weixin {
+        width: 24px;
+        height: 24px;
+        float: right;
+        margin: 45px 0 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .login_info .weixin span {
+        width: 24px;
+        height: 24px;
+        display: block;
+        background: url(../img/user-icon.png) no-repeat;
+        background-position: -53px -27px;
+    }
+
+    .login_info .erweima {
+        display: none;
+        position: absolute;
+        left: -60px;
+        top: 30px;
+    }
+
+    .login_info .erweima .erweima-inner {
+        position: relative;
+        border: 1px solid #eee;
+        padding: 10px;
+        background: #fff;
+    }
+
+    .login_info .erweima .erweima-inner i {
+        top: -7px;
+        right: 70px;
+        height: 7px;
+        overflow: hidden;
+        font: 400 20px/14px simsun;
+        color: #fff;
+        display: block;
+        position: absolute;
+        background: #fff;
+        width: 13px;
+        text-indent: -4px;
+    }
+
+    .login_info .erweima .erweima-inner i s {
+        position: relative;
+        top: 1px;
+        text-decoration: none;
+        color: #eee;
+    }
+
+    .login_info .weixin span:hover .erweima {
+        display: block !important;
+    }
+
+    /* ==content== */
+
+    .content {
+        width: 990px;
+        height: 524px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .content .left {
+        position: absolute;
+        background: url(../img/register_bg.png) no-repeat 0;
+        width: 605px;
+        height: 430px;
+        left: 0;
+        top: 0;
+    }
+
+    .content .right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 385px;
+    }
+
+    /* ==register== */
+
+    .register .title {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        position: relative;
+    }
+
+    .register .title .cur .bg-ff {
+        display: block;
+        background: #fff;
+        width: 130px;
+        height: 6px;
+        position: absolute;
+        bottom: -5px;
+        left: 1px;
+    }
+
+    .title li.cur {
+        width: 130px;
+        height: 31px;
+        font-size: 14px;
+        background: #fff;
+        color: #E31939;
+        border: 1px solid #ddd;
+        border-bottom: 0;
+        cursor: pointer;
+        text-align: center;
+        line-height: 31px;
+        margin-top: 0;
+    }
+
+    .title li.login {
+        font-size: 12px;
+        color: #666666;
+    }
+
+    .title li.login a {
+        color: #E31939;
+        text-decoration: none;
+    }
+
+    .form {
+        width: 303px;
+        border: 1px #ddd solid;
+        padding: 30px 40px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .item {
+        width: 300px;
+        height: 72px;
+    }
+
+    .item input {
+        width: 248px;
+        height: 16px;
+        padding: 10px 5px 10px 40px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        position: relative;
+    }
+
+    .item i {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 50px;
+        z-index: 2;
+    }
+
+    .item .tel-i {
+        top: 102px;
+        background: url(../img/user-icon.png) no-repeat;
+        background-position: 0 -81px;
+    }
+
+    .item .pass-i1 {
+        top: 175px;
+        background: url(../img/user-icon.png) no-repeat;
+        background-position: 0 -36px;
+    }
+
+    .item .pass-i2 {
+        top: 246px;
+        background: url(../img/user-icon.png) no-repeat;
+        background-position: 0 -36px;
+    }
+
+    .item-yz {
+        width: 300px;
+        height: 72px;
+    }
+
+    .item-yz input {
+        width: 105px;
+        height: 16px;
+        padding: 10px 5px 10px 40px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        position: relative;
+    }
+
+    .item-yz .pass-i3 {
+        width: 20px;
+        height: 20px;
+        z-index: 2;
+        position: absolute;
+        left: 8px;
+        top: 7px;
+        background: url(../img/user-icon.png) no-repeat;
+        background-position: 0 -56px;
+    }
+
+    .item-yz .img {
+        margin-left: 5px;
+        position: absolute;
+    }
+
+    .item-yz .img .captcha {
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    .item-yzm {
+        width: 300px;
+        height: 40px;
+    }
+
+    .item-yzm input {
+        width: 105px;
+        height: 16px;
+        padding: 10px 5px 10px 40px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        position: relative;
+    }
+
+    .pass-i4 {
+        width: 20px;
+        height: 20px;
+        z-index: 2;
+        position: absolute;
+        left: 50px;
+        top: 389px;
+        background: url(../img/user-icon.png) no-repeat;
+        background-position: 0 -81px;
+    }
+
+    .item-yzm .zphone {
+        height: 37px;
+        font-size: 12px;
+        font-style: normal;
+        font-family: microsoft yahei;
+        color: #FFF;
+        background: #E31939;
+        text-align: center;
+        line-height: 37px;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 0px 8px;
+        border: none;
+        margin-left: 10px;
+        float: left;
+    }
+
+    .safety {
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    .safety input {
+        margin-right: 10px;
+    }
+
+    .mar-b a {
+        color: blue;
+        text-decoration: none;
+    }
+
+    .item-btn {
+        /* overflow: hidden; */
+        zoom: 1;
+        position: relative;
+    }
+
+    .item-btn .r-btn {
+        width: 300px;
+        height: 35px;
+        font-size: 14px;
+        color: #FFF;
+        background: #E31939;
+        text-align: center;
+        line-height: 35px;
+        text-decoration: none;
+        cursor: pointer;
+        letter-spacing: 2px;
+        border: none;
+    }
+
+    #picyzm {
+        width: 130px;
+        height: 36px;
+        display: inline-block;
+        position: absolute;
+        margin-left: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .item-yz {
+        position: relative;
+    }
+
+    #code_input-error {
+        position: absolute;
+        top: 40px;
+        left: 0px;
+    }
+
+    .safety {
+        position: relative;
+    }
+
+    #agreement-error {
+        position: absolute;
+        top: 0;
+        left: 190px;
+    }
+
+    #tel-error,
+    #password-error,
+    #password_again-error,
+    #code_input-error,
+    #agreement-error {
+        color: #E31939;
+    }
+
+    .tishi {
+        display: none;
+        width: 200px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: rgba(31, 102, 196, 0.7);
+        position: absolute;
+        top: -100px;
+        left: 50px;
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 50px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <!-- login_title -->
+    <div class="login_title">
+        <div class="login_info">
+            <a href="../index.html" class="logo"><img src="../img/logo1.png" alt=""></a>
+            <span class="welcome">欢迎注册</span>
+
+            <div class="user-weixin weixin">
+                <span></span>
+                <div class="erweima">
+                    <div class="erweima-inner">
+                        <i><s>◇</s></i>
+                        <img alt="微博" src="../img/wbewm.png" width="130" height="130">
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-weixin weixin">
+                <span style="background-position: -53px -60px;"></span>
+                <div class="erweima">
+                    <div class="erweima-inner">
+                        <i><s>◇</s></i>
+                        <img alt="微博" src="../img/wxewm.png" width="130" height="130">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- content -->
+    <div class="content">
+        <div class="left">
+        </div>
+        <div class="right">
+            <form class="register">
+                <ul class="title">
+                    <li class="cur">
+                        手机注册
+                        <span class="bg-ff"></span>
+                    </li>
+                    <li class="login">已有账号！<a href="../html/login.html">登录</a></li>
+                </ul>
+            </form>
+
+            <form class="form">
+                <div class="item">
+                    <i class="tel-i"></i>
+                    <input type="text" placeholder="手机" id="phone" class="tel" name="tel">
+                    <span></span>
+                </div>
+                <div class="item">
+                    <i class="pass-i1"></i>
+                    <input type="text" placeholder="密码" id="pass" class="password" name="password">
+                    <span></span>
+                </div>
+                <div class="item">
+                    <i class="pass-i2"></i>
+                    <input type="text" placeholder="确认密码" class="password_again" name="password_again">
+                    <span></span>
+                </div>
+
+                <div class="item-yz">
+                    <i class="pass-i3"></i>
+                    <input type="text" placeholder="请输入验证码" id="code_input" class="yzm" name="yzm">
+                    <label for="" id="picyzm"></label>
+                    <span></span>
+                </div>
+
+                <div class="item-yzm">
+                    <i class="pass-i4"></i>
+                    <input type="text" placeholder="手机验证码">
+                    <input class="zphone" data-value="phone" type="button" value="获取手机验证码">
+                    <span></span>
+                </div>
+
+                <div class="safety">
+                    <input name="agreement" type="checkbox" class="checkbox" id="checkbox">
+                    <label class="mar-b"> 我已看过并接受《 <a href="" target="_blank"> 用户协议 </a>》</label>
+                </div>
+
+                <div class="item-btn">
+                    <input type="submit" id="btn" class="r-btn" value="立即注册">
+                    <label for="" class="tishi"></label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer_warp">
+            <div class="footer_title">
+                <img src="../img/footer_logo.png" style="width:135px;height:60px">
+            </div>
+            <div class="footer_list">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div><img src="../img/gouwuche.png"></div>
+                                <div class="tit"><a href="" class="tit">订购指南</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/zhifu.png"></div>
+                                <div class="tit"><a href="" class="tit">支付方式</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/peisong.png"></div>
+                                <div class="tit"><a href="" class="tit">配送说明</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/shouhou.png"></div>
+                                <div class="tit"><a href="" class="tit">售后服务</a></div>
+                            </td>
+                            <td style="border:none">
+                                <div><img src="../img/qita.png"></div>
+                                <div class="tit"><a href="" class="tit">生产经营资质</a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer_bottom" style="position: relative;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="99">
+                                <div>
+                                    <a href="" class="wxa"><img src="../img/weixin.png" class="wx"></a>
+                                    <a href=""><img src="../img/wxewm.png" class="wxewm"></a>
+                                    <img src="../img/weibo.png" class="wb">
+                                    <img src="../img/wbewm.png" class="wbewm">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="99" style="text-align: center;font-size: 13px;color: white">
+                                <a href="" style="color: white;" target="_blank">
+                                    Copyright © 2012-2020 唯品客(上海)投资管理有限公司 版权所有 沪ICP备12038156号-1
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- goTop -->
+    <div class="goTop">
+        <img src="../img/stop.png">
+    </div>
+
+    <script src="../js/comment.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+
+</html>

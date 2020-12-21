@@ -1,0 +1,205 @@
+/* == cake_nav == */
+.cake_nav {
+    padding: 20px;
+    background: #fafafa;
+    width: 1060px;
+    margin: 0 auto;
+}
+
+.nav2 {
+    background-color: #A0522D;
+
+}
+
+.nav2 .nav_lia {
+    color: white !important;
+}
+
+.cake_nav a:hover {
+    color: #E31939;
+}
+
+.cake_category {
+    clear: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gory1 {
+    padding-bottom: 10px;
+}
+
+.cake_category ul li:first-child {
+    margin-right: 26px;
+}
+
+.cake_category ul {
+    width: 100%;
+    height: 30px;
+    clear: both;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.cake_category ul li span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #73716e;
+}
+
+.cake_category ul li a {
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 0px 8px;
+    margin: 0 5px;
+    display: inline-block;
+    line-height: 20px;
+    color: #666666;
+    font-size: 15px !important;
+}
+
+.display {
+    width: 100%;
+    margin-right: 20px;
+    margin-top: -22px;
+    font-size: 15px;
+    color: #666666;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.display a {
+    color: #666666;
+}
+
+.display a span {
+    margin: 0 14px 0 3px;
+}
+
+.display a:hover span {
+    color: #E31939 !important;
+}
+
+.display a {
+    display: block;
+}
+
+.cate_nav2 {
+    margin-right: 40px;
+}
+
+/* == cake_list== */
+.cake_list {
+    width: 100%;
+    margin: auto;
+}
+
+.cake_list_warp {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.cake_list_item {
+    width: 100%;
+    margin: 0 auto;
+    height: 280px;
+    clear: both;
+    margin-top: 10px;
+    display: flex;
+    margin-bottom: 3px;
+
+    background: url(../img/cake_list_bg.png) no-repeat;
+    background-color: pink;
+}
+
+.cake_list_item .img {
+    width: 300px;
+    margin-right: 20px;
+}
+
+.cake_list_item .img img {
+    width: 100%;
+    height: 280px;
+    padding-top: 4px;
+}
+
+.cake_list_item .content {
+    width: 36%;
+    line-height: 25px;
+    padding-top: 50px;
+}
+
+.cake_list_item .content .title {
+    padding-bottom: 30px;
+}
+
+.cake_list_item .content .title a {
+    font-size: 16px;
+    color: #6c6161;
+}
+
+.cake_list_item .content .analysis {
+    width: 360px;
+}
+
+.cake_list_item .content .analysis span {
+    font-size: 14px;
+    color: #9b9595;
+    font-family: 宋体;
+}
+
+.cake_list_item .content .analysis .desc_english {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.cake_list_item .content_price {
+    width: 200px;
+    float: left;
+    text-align: center;
+    font-family: 宋体;
+}
+
+.cake_list_item .content_price span {
+    font-size: 16px;
+    color: #6c6161;
+    font-family: 宋体;
+}
+
+.price {
+    display: block;
+    line-height: 275px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.cake_list_item .btn {
+    height: 280px;
+    background: #fdf7f2;
+    width: 184px;
+    float: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cake_list_item .btn a {
+    color: #6E3311;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+}

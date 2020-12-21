@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* ==header== */
+#header {
+    width: 100%;
+    height: 120px;
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    z-index: 3;
+    position: fixed;
+}
+
+.header_warp { 
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#header li {
+    height: 100%;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#header li a {
+    font-size: 12px;
+    color: #8c8c8c;
+}
+
+#header li:hover a {
+    color: #333;
+}
+
+#header li img {
+    margin-bottom: 12px;
+}
+
+.left {
+    float: left;
+    height: 100%;
+}
+
+.nav_left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#header .nav_left .logo {
+    width: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_left li {
+    border-right: 1px solid #e8e8e8;
+}
+
+.nav_li {
+    position: relative;
+}
+
+.nav_li:hover .line {
+    opacity: 1;
+}
+
+.line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background: #ffe32a;
+    opacity: 0;
+}
+
+.active {
+    background-color: #A0522D;
+}
+
+.activea {
+    color: white !important;
+}
+
+.right {
+    height: 100%;
+    float: right;
+}
+
+.nav_right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_right li {
+    border-left: 1px solid #e8e8e8;
+}
+
+#header .nav_right .more {
+    width: 128px;
+}
+
+.car {
+    position: relative;
+}
+
+.mycar-num {
+    position: absolute;
+    right: 28px;
+    top: 30px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+    background: #ffe32a;
+    color: #000;
+    background: url(../img/yuan1.png) no-repeat center;
+}
+
+.clear {
+    width: 100%;
+    height: 120px;
+}
+
+/* ==goTop== */
+.goTop {
+    position: fixed;
+    z-index: 1000001;
+    right: 20px;
+    bottom: 20px;
+}
+
+.goTop img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+/* ==footer== */
+.footer {
+    width: 100%;
+    height: 270px;
+    margin-top: 10px;
+    background: url(../img/foot_bg.png);
+    text-align: center;
+    clear: both;
+}
+
+.footer_warp {
+    margin: 0 auto;
+}
+
+.footer_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer_list table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.footer .footer_list table tr td {
+    width: 10%;
+    text-align: center;
+    padding-top: 10px;
+    padding: 0 30px;
+    border: none;
+    border-right: 1px solid white;
+}
+
+.footer .footer_list table tr td img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.footer .footer_list table tr td .tit {
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer .footer_list table tr td a {
+    width: 100%;
+}
+
+.footer .footer_list1 table tr td img {
+    width: 60px;
+    height: 60px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.footer_bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_bottom .wx {
+    width: 45px;
+    height: 45px;
+    padding-right: 20px;
+}
+
+.footer_bottom .wxewm {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    left: 34%;
+    bottom: 50px;
+    display: none;
+}
+
+.footer_bottom .wb {
+    width: 45px;
+    height: 45px;
+    padding-left: 20px;
+}
+
+.footer_bottom .wbewm {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    right: 34%;
+    bottom: 50px;
+    display: none;
+}

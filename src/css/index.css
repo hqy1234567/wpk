@@ -1,0 +1,251 @@
+/* ==banner== */
+#banner {
+    position: relative;
+    width: 100%;
+    height: 530px;
+}
+
+.banner1 {
+    width: 100%;
+    height: 530px;
+    background: url(../img/202010131536205610.jpg) center center / auto 100% no-repeat;
+}
+
+.banner2 {
+    width: 100%;
+    height: 530px;
+    background: url(../img/202010221611334112.jpg) center center / auto 100% no-repeat;
+}
+
+.banner3 {
+    width: 100%;
+    height: 530px;
+    background: url(../img/e9a79c8d2056101ed06ba6a670cf8129.jpg) center center / auto 100% no-repeat !important;
+}
+
+.content {
+    height: 100%;
+}
+
+.content_warp {
+    height: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 36px !important;
+    height: 36px !important;
+    background-color: rgba(0, 0, 0, .2) !important;
+    border-radius: 50%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    color: white;
+}
+
+.pagination {
+    width: 100%;
+    height: 20px;
+    position: relative;
+}
+
+.swiper-pagination {
+    width: 50px !important;
+    height: 10px !important;
+    position: absolute;
+    left: 50%;
+    bottom: 35px;
+    transform: translateX(-50%);
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.swiper-pagination-bullet-active {
+    background: white !important;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 3px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+/* ==newShops== */
+#newShops {
+    width: 100%;
+}
+
+.newShops_warp {
+    margin: 0 auto;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.newShops_warp .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.newShops_warp .list h3 {
+    font-size: 15px;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+#newShops .title {
+    width: 100%;
+    height: 80px;
+    padding-top: 15px;
+    color: pink;
+    margin-left: 96px;
+}
+
+#newShops .title h3 {
+    color: #101010;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.newShops_item {
+    float: left;
+    width: 381px;
+    height: 390px;
+    padding-top: 30px;
+    padding-left: 40px;
+    margin-bottom: 64px;
+}
+
+.newShops_item i {
+    font-style: normal;
+    color: #E31939;
+    font-size: 15px;
+}
+
+.newShops_item h3 {
+    padding-bottom: 290px;
+    font-style: normal;
+}
+
+.newShops_item p {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newShops_item span {
+    color: #E31939;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* ==footer== */
+.footer {
+    width: 100%;
+    height: 270px;
+    margin-top: 10px;
+    background: url(../img/foot_bg.png);
+    text-align: center;
+    clear: both;
+}
+
+.footer_warp {
+    margin: 0 auto;
+}
+
+.footer_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer_list table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.footer .footer_list table tr td {
+    width: 10%;
+    text-align: center;
+    padding-top: 10px;
+    padding: 0 30px;
+    border: none;
+    border-right: 1px solid white;
+}
+
+.footer .footer_list table tr td img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.footer .footer_list table tr td .tit {
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer .footer_list table tr td a {
+    width: 100%;
+}
+
+.footer .footer_list1 table tr td img {
+    width: 60px;
+    height: 60px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.footer_bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_bottom .wx {
+    width: 45px;
+    height: 45px;
+    padding-right: 20px;
+}
+
+.footer_bottom .wxewm {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    left: 34%;
+    bottom: 50px;
+    display: none;
+}
+
+.footer_bottom .wb {
+    width: 45px;
+    height: 45px;
+    padding-left: 20px;
+}
+
+.footer_bottom .wbewm {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    right: 34%;
+    bottom: 50px;
+    display: none;
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蛋糕名录</title>
+    <script src="../static/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/comment.css">
+    <link rel="stylesheet" href="../css/cakeList.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="clear">
+        <div id="header">
+            <div class="header_warp">
+                <div class="left">
+                    <ul class="nav_left">
+                        <li class="logo"><img src="../img/logo1.png" alt=""></li>
+                        <li class="nav1"><img src="../img/icon05.png" alt=""><a href="">合肥</a></li>
+                        <li class="nav_li nav2"><i class="line"></i><img src="../img/1.png" alt=""><a class="nav_lia"
+                                href="./cakeList.html">蛋糕名录</a>
+                        </li>
+                        <li class="nav_li nav3"><i class="line"></i><img src="../img/2.png" alt=""><a class="nav_lia"
+                                href="./bread.html">面包小食</a>
+                        </li>
+                        <li class="nav_li nav4"><i class="line"></i><img src="../img/3.png" alt=""><a class="nav_lia"
+                                href="./active.html">最新活动</a>
+                        </li>
+                        <li class="nav_li nav5"><i class="line"></i><img src="../img/5.png" alt=""><a class="nav_lia"
+                                href="./member.html">会员中心</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="right">
+                    <ul class="nav_right">
+                        <li><img src="../img/login.png" alt=""><a href="./login.html">登录/注册</a></li>
+                        <li><img style="width: 18px; height: 20px;" src="../img/card.png" alt=""><a href="">卡券充值</a>
+                        </li>
+                        <li class="car"><img style="width: 18px;height: 20px;" src="../img/bag1.png" alt=""><i
+                                class="mycar-num cart_num">0</i><a href="">购物车</a></li>
+                        <li class="more"><img src="../img/icon02.png" alt=""><a href="">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- goTop -->
+    <div class="goTop">
+        <img src="../img/stop.png">
+    </div>
+
+    <!-- cake_nav -->
+    <div class="cake_nav">
+        <div class="cake_category gory1">
+            <ul>
+                <li><span>使用场景&nbsp;&nbsp;|</span></li>
+                <li class="" data-id="30" data-cate_id="0">
+                    <a href="">全部</a>
+                </li>
+                <li class="">
+                    <a href="">情侣</a></li>
+                <li class="">
+                    <a href="">儿童</a></li>
+                <li class="">
+                    <a href="">聚会</a></li>
+                <li class="">
+                    <a href="">长辈</a></li>
+                <li class="">
+                    <a href="">生日</a>
+                </li>
+            </ul>
+        </div>
+        <div class="cake_category">
+            <ul>
+                <li><span>蛋糕口味&nbsp;&nbsp;|</span></li>
+                <li class="" data-id="2" data-cate_id="0">
+                    <a href="">全部</a>
+                </li>
+                <li class="">
+                    <a href="">水果</a></li>
+                <li class="">
+                    <a href="">咖啡</a></li>
+                <li class="">
+                    <a href="">坚果</a></li>
+                <li class="">
+                    <a href="">巧克力</a></li>
+                <li class="">
+                    <a href="">芝士</a></li>
+                <li class="">
+                    <a href="">慕斯</a></li>
+                <li class="">
+                    <a href="">奶油</a></li>
+                <li class="">
+                    <a href="">经典</a></li>
+                <li class="">
+                    <a href="">拿破仑</a></li>
+                <li class="">
+                    <a href="">低糖</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="display">排列方式：
+            <a href="" class="cate_nav1">
+                <img src="../img/pl2.gif">
+                <span>(默认)</span>
+            </a>
+            <a href="" class="cate_nav2">
+                <img src="../img/pl1.gif">
+            </a>
+        </div>
+    </div>
+
+    <!-- cake_list -->
+    <div class="cake_list">
+        <div class="cake_list_warp">
+            <!-- <div class="cake_list_item">
+                <div class="img"> <a href=""><img src="../img/292.jpg" alt=""></a></div>
+                <div class="content">
+                    <div class="title">
+                        <a href="">栗秋 Chestnut Cream Cake</a>
+                    </div>
+                    <div class="analysis">
+                        <span>甄选优质板栗，手工研制栗子泥，融入新西兰天然奶油，口感细腻轻沙，不同于以往栗子香气。</span>
+                    </div>
+                </div>
+                <div class="content_price">
+                    <span class="price">￥268.00/1.5磅</span>
+                </div>
+                <div class="btn"> <a href="">查看详情</a></div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer_warp">
+            <div class="footer_title">
+                <img src="../img/footer_logo.png" style="width:135px;height:60px">
+            </div>
+            <div class="footer_list">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div><img src="../img/gouwuche.png"></div>
+                                <div class="tit"><a href="" class="tit">订购指南</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/zhifu.png"></div>
+                                <div class="tit"><a href="" class="tit">支付方式</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/peisong.png"></div>
+                                <div class="tit"><a href="" class="tit">配送说明</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/shouhou.png"></div>
+                                <div class="tit"><a href="" class="tit">售后服务</a></div>
+                            </td>
+                            <td style="border:none">
+                                <div><img src="../img/qita.png"></div>
+                                <div class="tit"><a href="" class="tit">生产经营资质</a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer_bottom" style="position: relative;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="99">
+                                <div>
+                                    <a href="" class="wxa"><img src="../img/weixin.png" class="wx"></a>
+                                    <a href=""><img src="../img/wxewm.png" class="wxewm"></a>
+                                    <img src="../img/weibo.png" class="wb">
+                                    <img src="../img/wbewm.png" class="wbewm">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="99" style="text-align: center;font-size: 13px;color: white">
+                                <a href="" style="color: white;" target="_blank">
+                                    Copyright © 2012-2020 唯品客(上海)投资管理有限公司 版权所有 沪ICP备12038156号-1
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取本地数据,渲染蛋糕名录
+        let aaa = JSON.parse(localStorage.getItem("goodslist"));
+        console.log(aaa);
+
+        let cake_list_warp = document.querySelector(".cake_list_warp");
+
+        aaa.forEach((item, index) => {
+            for (index in item) {
+                item.forEach((value, idx) => {
+                    if (index == idx && value.type == 1) {
+                        cake_list_warp.innerHTML += `
+                            <div class="cake_list_item">
+                                <div class="img"> <a href=""><img src="${value.oss_thumb}" alt=""></a></div>
+                                <div class="content">
+                                    <div class="title">
+                                        <a href="">${value.name}</a>
+                                    </div>
+                                    <div class="analysis">
+                                        <span>${value.desc}</span></br>
+                                        <span class="desc_english">${value.desc_english}</span>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price"><span>￥${value.good_product[0].price}</span>/<span>${value.good_product[0].name}</span></span>
+                                </div>
+                                <div class="btn"><a idx=${value.id}>查看详情</a></div>
+                            </div>
+                        `
+                    }
+                })
+            }
+        });
+
+        // 传递id到详情页
+        cake_list_warp.onclick = function () {
+            let e = window.event;
+            let target = e.target;
+            let goodsid = target.getAttribute("idx");
+            if (goodsid) {
+                location.href=`./details.html?id=${goodsid}`;
+            }
+        }
+    </script>
+
+    <script src="../js/comment.js"></script>
+    <script src="../js/data.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/ajax.js"></script>
+</head>
+
+<body>
+    <script>
+        pAjax({
+            type: 'post',
+            url: '../api/removeCarData.php',
+            data: {
+                tel: '18878725676',
+                goodsid: '28'
+            }
+        }).then(res => {
+            // render();
+        });
+    </script>
+    
+</body>
+
+</html>

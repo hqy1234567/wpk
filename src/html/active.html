@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最新活动</title>
+    <script src="../static/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/comment.css">
+
+</head>
+
+<style>
+    .nav_left .nav4 {
+        background-color: #A0522D;
+    }
+
+    .nav_left .nav4 .nav_lia {
+        color: white !important;
+    }
+
+    .zxhd_box {
+        width: 1100px;
+        margin: 0 auto
+    }
+
+    .zxhd_box img {
+        width: 100%;
+    }
+
+    .zxhd_box .zxhd_form {
+        width: 1100px;
+        height: 800px;
+        background: url(../img/zxhd_bg.png) no-repeat;
+    }
+
+    .zxhd_box .zxhd_form .zxhd_tit {
+        padding-top: 80px;
+        display: inline-block;
+        padding-left: 140px;
+        color: #68361a;
+        font-size: 14px
+    }
+
+    #order_foretaste table {
+        width: 800px;
+    }
+
+    #order_foretaste table td {
+        height: 40px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #order_foretaste table tr .tdText {
+        width: 100px;
+        text-align: right;
+        font-size: 14px;
+        color: #68361a;
+        padding-right: 20px
+    }
+
+    #order_foretaste table tr .tdText span {
+        vertical-align: middle
+    }
+
+    #order_foretaste table tr .tdInput {
+        width: 500px
+    }
+
+    #order_foretaste table tr .tdInput input {
+        border: 0;
+        width: 100%;
+        height: 30px
+    }
+
+    select {
+        width: 120px;
+        border: 0
+    }
+
+    .btn input {
+        background: #b0916a;
+        padding: 0 65px;
+        border: none;
+        margin: 2px;
+        height: 34px;
+        color: #fff;
+        cursor: pointer;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        outline: none
+    }
+
+    .tdInput img {
+        width: 80px;
+        height: 25px;
+    }
+</style>
+
+<body>
+    <!-- header -->
+    <div class="clear">
+        <div id="header">
+            <div class="header_warp">
+                <div class="left">
+                    <ul class="nav_left">
+                        <li class="logo"><img src="../img/logo1.png" alt=""></li>
+                        <li class="nav1"><img src="../img/icon05.png" alt=""><a href="">合肥</a></li>
+                        <li class="nav_li nav2"><i class="line"></i><img src="../img/1.png" alt=""><a class="nav_lia"
+                                href="./cakeList.html">蛋糕名录</a>
+                        </li>
+                        <li class="nav_li nav3"><i class="line"></i><img src="../img/2.png" alt=""><a class="nav_lia"
+                                href="./bread.html">面包小食</a>
+                        </li>
+                        <li class="nav_li nav4"><i class="line"></i><img src="../img/3.png" alt=""><a class="nav_lia"
+                                href="./active.html">最新活动</a>
+                        </li>
+                        <li class="nav_li nav5"><i class="line"></i><img src="../img/5.png" alt=""><a class="nav_lia"
+                                href="./member.html">会员中心</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="right">
+                    <ul class="nav_right">
+                        <li><img src="../img/login.png" alt=""><a href="./login.html">登录/注册</a></li>
+                        <li><img style="width: 18px; height: 20px;" src="../img/card.png" alt=""><a href="">卡券充值</a>
+                        </li>
+                        <li class="car"><img style="width: 18px;height: 20px;" src="../img/bag1.png" alt=""><i
+                                class="mycar-num cart_num">0</i><a href="">购物车</a></li>
+                        <li class="more"><img src="../img/icon02.png" alt=""><a href="">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- goTop -->
+    <div class="goTop">
+        <img src="../img/stop.png">
+    </div>
+
+    <!-- content -->
+    <div class="zxhd_box">
+        <img src="../img/zxhd_top.png">
+        <div class="zxhd_form">
+            <span class="zxhd_tit">申请唯品客企业免费试吃 丨 FREETASTE 丨</span><br>
+            <span class="zxhd_tit" style="padding-top: 30px;">试吃申请</span><br>
+            <div style="width: 800px;height: 20px;margin-left: 140px;">
+                <form id="order_foretaste">
+                    <table border="0" cellpadding="0" cellspacing="0" id="table1">
+                        <tbody>
+                            <tr>
+                                <td class="tdText"><span>公司名称</span></td>
+                                <td class="tdInput">
+                                    <input type="text" name="company[full_name]" placeholder="请填写你工作的公司单位名称">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdText"><span>公司地址</span></td>
+                                <td class="tdInput">
+
+                                    <select name="province_id" data-value="340000">
+                                        <option value="340000">340000</option>
+                                    </select>
+
+                                    <select name="city_id" data-value="340100">
+                                        <option class="city cur" data-id="340100">合肥 </option>
+                                        <option class="city " data-id="340200">芜湖 </option>
+                                        <option class="city " data-id="341200">阜阳 </option>
+                                    </select>
+                                    <select name="area_id">
+                                        <option></option>
+                                    </select>
+                                    <span
+                                        style="font-size: 14px;color: #b1b1b1;padding-left: 10px"><a></a>(您可以切换至其他城市)</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tdText"><span>详细地址</span></td>
+                                <td class="tdInput">
+
+                                    <input type="text" name="company[address]" placeholder="请填写你公司所在的详细地址">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tdText"><span>公司规模</span></td>
+                                <td class="tdInput"><input type="number" name="company[scale]"
+                                        placeholder="请填写你公司单位的总人数"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="tdText"><span>参加试吃活动人数</span></td>
+                                <td class="tdInput"><input type="number" name="foretaste[number]"
+                                        placeholder="请填写参加试吃活动时的大概人数">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdText"><span>参加试吃活动的部门</span></td>
+                                <td class="tdInput"><input type="text" name="foretaste[department]"
+                                        placeholder="请填写参加试吃活动的部门名称(如: 人事部)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdText"><span>品尝地点</span></td>
+                                <td class="tdInput">
+                                    <input type="text" name="foretaste[address]" placeholder="请输入品尝地点">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdText"><span>品尝时间</span></td>
+                                <td class="tdInput">
+                                    <input type="date" name="foretaste[time]" placeholder="请选择品尝时间">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdText"></td>
+                                <td class="tdInput"></td>
+                            </tr>
+                            <tr>
+                                <td class="tdText"><span>您的姓名</span></td>
+                                <td class="tdInput">
+                                    <input type="text" name="company[contact]" placeholder="请填写您的真实姓名,以便我们审核通过后与您取得联系">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdText"><span>您的手机号码</span></td>
+                                <td class="tdInput"><input type="text" name="company[phone]" placeholder="请填写您的手机号码">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdText"><span>验证码</span></td>
+                                <td class="tdInput">
+                                    <input style="width:100px" name="captcha" type="text" placeholder="请输入运算结果">&nbsp;
+                                    <style>
+                                        .captcha {
+                                            vertical-align: middle;
+                                            cursor: pointer;
+                                            width: 80px;
+                                            height: 25px;
+                                        }
+                                    </style>
+                                    <img src='../img/captcha.html' alt="验证码" class="captcha">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <div class="btn" style="text-align: center;margin-top:10px">
+                    <input type="button" value="提交申请">
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="../img/zxhd_bottom.png">
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer_warp">
+            <div class="footer_title">
+                <img src="../img/footer_logo.png" style="width:135px;height:60px">
+            </div>
+            <div class="footer_list">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div><img src="../img/gouwuche.png"></div>
+                                <div class="tit"><a href="" class="tit">订购指南</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/zhifu.png"></div>
+                                <div class="tit"><a href="" class="tit">支付方式</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/peisong.png"></div>
+                                <div class="tit"><a href="" class="tit">配送说明</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/shouhou.png"></div>
+                                <div class="tit"><a href="" class="tit">售后服务</a></div>
+                            </td>
+                            <td style="border:none">
+                                <div><img src="../img/qita.png"></div>
+                                <div class="tit"><a href="" class="tit">生产经营资质</a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer_bottom" style="position: relative;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="99">
+                                <div>
+                                    <a href="" class="wxa"><img src="../img/weixin.png" class="wx"></a>
+                                    <a href=""><img src="../img/wxewm.png" class="wxewm"></a>
+                                    <img src="../img/weibo.png" class="wb">
+                                    <img src="../img/wbewm.png" class="wbewm">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="99" style="text-align: center;font-size: 13px;color: white">
+                                <a href="" style="color: white;" target="_blank">
+                                    Copyright © 2012-2020 唯品客(上海)投资管理有限公司 版权所有 沪ICP备12038156号-1
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/comment.js"></script>
+</body>
+
+</html>

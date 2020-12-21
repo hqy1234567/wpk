@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情页</title>
+    <script src="../static/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/comment.css">
+    <link rel="stylesheet" href="../css/details.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <!-- header -->
+    <div class="clear">
+        <div id="header">
+            <div class="header_warp">
+                <div class="left">
+                    <ul class="nav_left">
+                        <li class="logo"><img src="../img/logo1.png" alt=""></li>
+                        <li class="nav1"><img src="../img/icon05.png" alt=""><a href="">合肥</a></li>
+                        <li class="nav_li nav2"><i class="line"></i><img src="../img/1.png" alt=""><a class="nav_lia"
+                                href="./cakeList.html">蛋糕名录</a>
+                        </li>
+                        <li class="nav_li nav3"><i class="line"></i><img src="../img/2.png" alt=""><a class="nav_lia"
+                                href="./bread.html">面包小食</a>
+                        </li>
+                        <li class="nav_li nav4"><i class="line"></i><img src="../img/3.png" alt=""><a class="nav_lia"
+                                href="./active.html">最新活动</a>
+                        </li>
+                        <li class="nav_li nav5"><i class="line"></i><img src="../img/5.png" alt=""><a class="nav_lia"
+                                href="./member.html">会员中心</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="right">
+                    <ul class="nav_right">
+                        <li><img src="../img/login.png" alt=""><a href="./login.html">登录/注册</a></li>
+                        <li><img style="width: 18px; height: 20px;" src="../img/card.png" alt=""><a href="">卡券充值</a>
+                        </li>
+                        <li class="car"><img style="width: 18px;height: 20px;" src="../img/bag1.png" alt=""><i
+                                class="mycar-num cart_num">0</i><a href="../html/car.html">购物车</a></li>
+                        <li class="more"><img src="../img/icon02.png" alt=""><a href="">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 渲染内容 -->
+    <div class="content">
+        <div class="banner">
+
+        </div>
+    </div>
+
+    <div class="goods_info">
+
+    </div>
+
+    <!-- 详情页底部 大众点评 -->
+    <div class="show">
+        <div class="clearfix" style="background:#f3f3f3; padding:15px;margin:120px 0">
+            <form id="comment_form">
+                <div class="pl_form">
+                    <div class="dzdp"><span>大众点评</span></div>
+                    <div class="pl_detail">
+                        <span>网名:</span>
+                        <input type="text" name="user_name" id="uname" value="" readonly="readonly">
+                        <span class="bj">*</span>
+                        <label>
+                            <input type="checkbox" name="anonymous" style="vertical-align: middle" value="1"
+                                checked="checked">
+                            <span style="font-size: 12px">匿名发表</span>
+                        </label>
+                    </div>
+                    <div class="pl_detail">
+                        <span>内容:</span>
+                        <textarea name="content"></textarea>
+                        <span class="bj">*</span>
+                    </div>
+                    <div class="btn" style="padding-top:20px">
+                        <input type="submit" value="提交评论">&nbsp;&nbsp;&nbsp;
+                        <input type="reset" value="清除重填">
+                    </div>
+                </div>
+            </form>
+
+            <div style="float:left;">
+                <img src="https://vipcake.oss-cn-shanghai.aliyuncs.com/themes/pc/images/zhongjian.png" alt="用户评论">
+            </div>
+            <div class="pl_list">
+                <div id="comment_list"><br><br><br><br><br>该商品还没有评论！你是第一个</div>
+                <div id="comment_list_page">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer_warp">
+            <div class="footer_title">
+                <img src="../img/footer_logo.png" style="width:135px;height:60px">
+            </div>
+            <div class="footer_list">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div><img src="../img/gouwuche.png"></div>
+                                <div class="tit"><a href="" class="tit">订购指南</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/zhifu.png"></div>
+                                <div class="tit"><a href="" class="tit">支付方式</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/peisong.png"></div>
+                                <div class="tit"><a href="" class="tit">配送说明</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/shouhou.png"></div>
+                                <div class="tit"><a href="" class="tit">售后服务</a></div>
+                            </td>
+                            <td style="border:none">
+                                <div><img src="../img/qita.png"></div>
+                                <div class="tit"><a href="" class="tit">生产经营资质</a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer_bottom" style="position: relative;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="99">
+                                <div>
+                                    <a href="" class="wxa"><img src="../img/weixin.png" class="wx"></a>
+                                    <a href=""><img src="../img/wxewm.png" class="wxewm"></a>
+                                    <img src="../img/weibo.png" class="wb">
+                                    <img src="../img/wbewm.png" class="wbewm">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="99" style="text-align: center;font-size: 13px;color: white">
+                                <a href="" style="color: white;" target="_blank">
+                                    Copyright © 2012-2020 唯品客(上海)投资管理有限公司 版权所有 沪ICP备12038156号-1
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- goTop -->
+    <div class="goTop">
+        <img src="../img/stop.png">
+    </div>
+
+    <!-- <script>
+        let add_to_card = document.getElementById("add_to_card");
+        // 判断是否有登录
+        let login = getCookie('login');
+        console.log(login);
+        if (!login) {
+            // 未登录，跳转到登录页面
+            location.href = './login.html';
+            localStorage.setItem('url', 'http://wpk.com/wpk/src/html/car.html');
+        } else {
+            // 点击添加购物车
+            add_to_card.onclick = function () {
+                console.log(1);
+            }
+        }
+    </script> -->
+
+    <script src="../js/comment.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/details.js"></script>
+</body>
+
+</html>

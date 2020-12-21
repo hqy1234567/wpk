@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <script src="../static/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/comment.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            height: 500px;
+            width: 100%;
+        }
+
+        .flowBox_jm {
+            width: 990px;
+            border: 1px solid #eee;
+            background: #fff;
+            margin: 0 auto;
+        }
+
+        #pay_fee_tips {
+            color: #666666;
+        }
+
+        .title_jm table td {
+            height: 40px;
+            font-size: 12px;
+            color: #666666;
+            background-color: rgb(240, 237, 237);
+        }
+
+        .jm_cartnum {
+            width: 65%;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0 auto;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .jm_cartnum input {
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .jm_cartnum span.jmminu {
+            font-size: 18px;
+            border-right: none;
+            line-height: 18px;
+        }
+
+        .jm_cartnum span {
+            float: left;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="clear">
+        <div id="header">
+            <div class="header_warp">
+                <div class="left">
+                    <ul class="nav_left">
+                        <li class="logo"><img src="../img/logo1.png" alt=""></li>
+                        <li class="nav1"><img src="../img/icon05.png" alt=""><a href="">合肥</a></li>
+                        <li class="nav_li nav2"><i class="line"></i><img src="../img/1.png" alt=""><a class="nav_lia"
+                                href="./cakeList.html">蛋糕名录</a>
+                        </li>
+                        <li class="nav_li nav3"><i class="line"></i><img src="../img/2.png" alt=""><a class="nav_lia"
+                                href="./bread.html">面包小食</a>
+                        </li>
+                        <li class="nav_li nav4"><i class="line"></i><img src="../img/3.png" alt=""><a class="nav_lia"
+                                href="./active.html">最新活动</a>
+                        </li>
+                        <li class="nav_li nav5"><i class="line"></i><img src="../img/5.png" alt=""><a class="nav_lia"
+                                href="./member.html">会员中心</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="right">
+                    <ul class="nav_right">
+                        <li><img src="../img/login.png" alt=""><a href="./login.html">登录/注册</a></li>
+                        <li><img style="width: 18px; height: 20px;" src="../img/card.png" alt=""><a href="">卡券充值</a>
+                        </li>
+                        <li class="car"><img style="width: 18px;height: 20px;" src="../img/bag1.png" alt=""><i
+                                class="mycar-num cart_num">0</i><a href="">购物车</a></li>
+                        <li class="more"><img src="../img/icon02.png" alt=""><a href="">更多</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- goTop -->
+    <div class="goTop">
+        <img src="../img/stop.png">
+    </div>
+
+    <!-- content -->
+    <div class="block_jm" style="min-height: 280px;">
+        <div id="bg" class="bg" style="display:none;"></div>
+        <div class="blank15"></div>
+        <div class="flowBox_jm">
+
+            <div id="pay_fee_tips" style="text-align: center;height: 60px;font-size: 18px;line-height: 60px;">
+                订单满168元免配送服务费，满128元起送(需10元配送费)
+            </div>
+
+            <div class="title_jm">
+                <table cellpadding="0" cellspacing="0" width="100%" border="0">
+                    <tbody>
+                        <tr>
+                            <td width="8%" align="center">
+                                <input type="checkbox" name="select_all" checked="true"
+                                    style="height:28px;vertical-align:middle;">
+                                全选
+                            </td>
+
+                            <td width="37%" align="center">产品</td>
+                            <td width="15%" align="center">数量</td>
+                            <td width="15%" align="center">单价</td>
+                            <td width="15%" align="center">小计</td>
+                            <td width="10%" align="center">操作</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <form id="formCart1" action="" method="">
+                <table align="center" cellpadding="0" cellspacing="0" style="height: auto;width: 100%;">
+
+                    <body>
+                        <tr height="35">
+                            <td
+                                style="text-align: 19px;background:#FAFAFA;font-weight:bold;color: #e31939;font-size: 12px;">
+                                网站自营
+                                <input type="hidden" name="supplierid" id="supplierid" value="0">
+                            </td>
+                        </tr>
+                    </body>
+                </table>
+
+                <table align="center" cellpadding="0" cellspacing="0" style="height:auto;width:100%;">
+                    <tbody class="userGoods">
+                        <!-- 插入tr -->
+                        <!-- <tr>
+                            <td align="center" width="5%">
+                                <input type="checkbox" name="select_good" checked="checked">
+                            </td>
+
+                            <td align="center" width="40%">
+                                <div class="thumb_name">
+                                    <dl style="display: flex;align-items: center;">
+                                        <dt>
+                                            <a href="" target="_blank">
+                                                <img src="" alt="" style="width: 80px;height: 80px;">
+                                            </a>
+                                        </dt>
+                                        <dd>
+                                            <a href="" target="_blank" class="f6"
+                                                style="color: #666666;font-size: 12px;">
+                                                圣诞节 | 圣诞劈柴蛋糕 Buche de Noel </a>
+                                            <br>
+                                            <font class="attrname" style="font-size: 14px;color: #BBBBBB;">产品规格:1磅
+                                            </font>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </td>
+
+                            <td align="center" width="15%">
+                                <div class="jm_cartnum">
+                                    <span class="jmminu">
+                                        -
+                                    </span>
+                                    <input type="text" name="num" id="input-F6rFhd7RnFhK" value="1" size="1"
+                                        class="jminputBg">
+                                    <span class="jmadd">
+                                        +
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td align="center" width="15%">
+                                <font class="cart_jmprice" style="font-size: 14px;color: #E31939;font-weight: 700;">
+                                    ¥258.00
+                                </font>
+                            </td>
+
+                            <td align="center" width="15%">
+                                <font class="cart_jmprice sum_price"
+                                    style="font-size: 14px;color: #E31939;font-weight: 700;">￥258.00</font>
+                            </td>
+
+                            <td align="center" width="10%">
+                                <a href="javascript:void(0);" class="f6 remove-good"
+                                    style="font-size: 12px;color: #666666;">删除</a>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </form>
+            
+            <table width="100%" align="center" border="0" cellpadding="5" cellspacing="6"
+                style="border-top:1px solid #eee;">
+                <tbody class="table_buttom">
+                    <!-- 插入tr -->
+                    <!-- <tr>
+                        <td width="150">
+                            <a href="" class="continue_buy">继续购物</a>
+                        </td>
+                        <td align="right" width="80">
+                            <a href="javascript:void(0);" class="jmclear">
+                                <span style="color:#aaaaaa">清空购物车 </span>
+                            </a>
+                        </td>
+                        <td align="right" id="cart_money_info"><span>应付金额:￥ <span id="order_amount">626.00</span></span>
+                        </td>
+                        <td align="right" width="150">
+                            <a href="javascript:void(0);" id="cart_settlement" class="jmcheckout"
+                                style="color: rgb(255, 255, 255); background: rgb(227, 25, 57);">去结算</a>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+        </div>
+        <div class="blank15"></div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer_warp">
+            <div class="footer_title">
+                <img src="../img/footer_logo.png" style="width:135px;height:60px">
+            </div>
+            <div class="footer_list">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div><img src="../img/gouwuche.png"></div>
+                                <div class="tit"><a href="" class="tit">订购指南</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/zhifu.png"></div>
+                                <div class="tit"><a href="" class="tit">支付方式</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/peisong.png"></div>
+                                <div class="tit"><a href="" class="tit">配送说明</a></div>
+                            </td>
+                            <td>
+                                <div><img src="../img/shouhou.png"></div>
+                                <div class="tit"><a href="" class="tit">售后服务</a></div>
+                            </td>
+                            <td style="border:none">
+                                <div><img src="../img/qita.png"></div>
+                                <div class="tit"><a href="" class="tit">生产经营资质</a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer_bottom" style="position: relative;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="99">
+                                <div>
+                                    <a href="" class="wxa"><img src="../img/weixin.png" class="wx"></a>
+                                    <a href=""><img src="../img/wxewm.png" class="wxewm"></a>
+                                    <img src="../img/weibo.png" class="wb">
+                                    <img src="../img/wbewm.png" class="wbewm">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="99" style="text-align: center;font-size: 13px;color: white">
+                                <a href="" style="color: white;" target="_blank">
+                                    Copyright © 2012-2020 唯品客(上海)投资管理有限公司 版权所有 沪ICP备12038156号-1
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/comment.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/car.js"></script>
+</body>
+
+</html>

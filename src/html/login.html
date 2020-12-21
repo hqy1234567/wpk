@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/comment.css">
+    <script src="../static/jquery/jquery.min.js"></script>
+    <script src="../static/validate/jquery.validate.min.js"></script>
+    <script src="../static/validate/localization/messages_zh.min.js"></script>
+
+    <script src="../js/ajax.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        input {
+            outline: none;
+        }
+
+        .login_title {
+            height: 95px;
+            width: 100%;
+        }
+
+        .login_info {
+            width: 920px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .login_info .logo {
+            float: left;
+            width: 290px;
+            height: 70px;
+        }
+
+        .login_info span.welcome {
+            color: #666666;
+            border-left: 1px #eee solid;
+            width: 290px;
+            height: 44px;
+            line-height: 44px;
+            font-size: 28px;
+            margin: 26px 0px 0px 15px;
+            float: left;
+            padding: 0px 15px;
+        }
+
+        .login_info .erweima {
+            display: none;
+            position: absolute;
+            left: -60px;
+            top: 30px;
+        }
+
+        .login_info .erweima .erweima-inner {
+            position: relative;
+            border: 1px solid #eee;
+            padding: 10px;
+            background: #fff;
+        }
+
+        .login_info .erweima .erweima-inner i {
+            top: -7px;
+            right: 70px;
+            height: 7px;
+            overflow: hidden;
+            font: 400 20px/14px simsun;
+            color: #fff;
+            display: block;
+            position: absolute;
+            background: #fff;
+            width: 13px;
+            text-indent: -4px;
+        }
+
+        .login_info .erweima .erweima-inner i s {
+            position: relative;
+            top: 1px;
+            text-decoration: none;
+            color: #eee;
+        }
+
+        /* ==content== */
+        .content {
+            width: 990px;
+            height: 524px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .content .left {
+            position: absolute;
+            background: url(../img/register_bg.png) no-repeat 0;
+            width: 605px;
+            height: 430px;
+            left: 0;
+            top: 0;
+        }
+
+        .content .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 385px;
+        }
+
+        /* ==register== */
+        .form {
+            width: 303px;
+            border: 1px #ddd solid;
+            padding: 30px 40px;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .item {
+            width: 300px;
+            height: 72px;
+        }
+
+        .item input {
+            width: 248px;
+            height: 16px;
+            padding: 10px 5px 10px 40px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .item i {
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 54px;
+            z-index: 2;
+        }
+
+        .item .tel-i {
+            top: 108px;
+            background: url(../img/user-icon.png) no-repeat;
+            background-position: 0 -14px;
+        }
+
+        .item .pass-i1 {
+            top: 179px;
+            background: url(../img/user-icon.png) no-repeat;
+            background-position: 0 -36px;
+        }
+
+        .item-yz {
+            width: 300px;
+            height: 72px;
+        }
+
+        .item-yz input {
+            width: 105px;
+            height: 16px;
+            padding: 10px 5px 10px 40px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .item-yz .pass-i3 {
+            width: 20px;
+            height: 20px;
+            z-index: 2;
+            position: absolute;
+            left: 54px;
+            top: 251px;
+            background: url(../img/user-icon.png) no-repeat;
+            background-position: 0 -56px;
+        }
+
+        .pass-i3-yz {
+            width: 20px;
+            height: 20px;
+            z-index: 2;
+            position: absolute;
+            left: 54px;
+            top: 180px;
+            background: url(../img/user-icon.png) no-repeat;
+            background-position: 0 -56px;
+        }
+
+        .item-yz .img {
+            margin-left: 10px;
+            position: absolute;
+            border: 1px solid #ccc;
+        }
+
+        .item-yz .img .captcha {
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        .safety {
+            height: 40px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #666666;
+
+        }
+
+        .safety .forget_password {
+            font-size: 12px;
+            color: #666666 !important;
+            text-decoration: none;
+        }
+
+        .mar-b {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .mar-b input {
+            margin-right: 10px;
+        }
+
+        .item-btn {
+            /* overflow: hidden; */
+            zoom: 1;
+            position: relative;
+        }
+
+        .item-btn .r_btn {
+            width: 300px;
+            height: 35px;
+            font-size: 14px;
+            color: #FFF;
+            background: #E31939;
+            text-align: center;
+            line-height: 35px;
+            text-decoration: none;
+            cursor: pointer;
+            letter-spacing: 2px;
+            border: none;
+        }
+
+        .login-tit {
+            height: 27px;
+            line-height: 27px;
+            font-size: 20px;
+        }
+
+        .form .login-tit span {
+            font-size: 18px;
+            user-select: none;
+            cursor: pointer;
+            color: #c9c9c9;
+        }
+
+        .form .login-tit span:last-child {
+            border-left: 1px solid #c9c9c9;
+            margin-left: 10px;
+            padding-left: 10px;
+        }
+
+        .form .login-tit .zy_nav .active-login {
+            color: #000 !important;
+        }
+
+        .section {
+            width: 306px;
+            background: #fff;
+            padding-top: 41px;
+        }
+
+        .set_yzm {
+            width: 120px;
+            height: 36px;
+            position: absolute;
+            right: 50px;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        #picyzm {
+            width: 130px;
+            height: 36px;
+            display: inline-block;
+            position: absolute;
+            margin-left: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .tishi {
+            display: none;
+            width: 200px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: rgba(31, 102, 196, 0.7);
+            position: absolute;
+            top: -100px;
+            left: 50px;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+    <script src="../static/gverify.js"></script>
+
+</head>
+
+
+<body>
+    <!-- login_title -->
+    <div class="login_title">
+        <div class="login_info">
+            <a href="../index.html" class="logo"><img src="../img/logo1.png" alt=""></a>
+            <span class="welcome">欢迎登录</span>
+        </div>
+    </div>
+
+    <!-- content -->
+    <div class="content">
+        <div class="left">
+        </div>
+        <div class="right">
+            <form class="form" method="POST">
+                <div class="login-tit">
+                    <div class="zy_nav">
+                        <span class="zy_span active-login">账号密码登录</span>
+                        <span class="zy_span">手机验证码登录</span>
+                    </div>
+                </div>
+
+                <div class="section_warp">
+                    <!-- 账号密码登录 -->
+                    <div class="section show">
+                        <div class="item">
+                            <i class="tel-i"></i>
+                            <input type="text" placeholder="手机/用户名/邮箱" name="tel" class="tel" id="tel">
+                            <span></span>
+                        </div>
+                        <div class="item">
+                            <i class="pass-i1"></i>
+                            <input type="text" placeholder="密码" name="password" class="password" id="password">
+                            <span></span>
+                        </div>
+
+                        <div class="item-yz">
+                            <i class="pass-i3"></i>
+                            <input type="text" placeholder="请输入验证码" id="code_input" name="yzm" class="yzm">
+                            <label for="" id="picyzm"></label>
+                            <span></span>
+                        </div>
+
+                        <div class="safety">
+                            <label for="remember" class="mar-b">
+                                <input type="checkbox" class="checkbox" name="checkbox">
+                                请保存我这次的登录信息
+                            </label>
+                            <a class="forget_password" href="../html/register.html" style="margin-left: 30px;">立即注册</a>
+                            <a class="forget_password" href="" style="margin-left: 10px;">忘记密码?</a>
+                        </div>
+
+                        <div class="item-btn">
+                            <input type="submit" id="btn" class="r_btn" value="立即登录">
+                            <label for="" class="tishi"></label>
+                        </div>
+                    </div>
+
+                    <!-- 手机号登录 -->
+                    <div class="section">
+                        <div class="item">
+                            <i class="tel-i"></i>
+                            <input type="text" placeholder="手机号">
+                            <span></span>
+                        </div>
+
+                        <div class="item-yz">
+                            <i class="pass-i3-yz"></i>
+                            <input type="text" placeholder="请输入验证码">
+                            <div class="set_yzm">
+                                获取验证码
+                            </div>
+                            <span></span>
+                        </div>
+                        <div class="item-btn">
+                            <input type="submit" class="r_btn" value="立即登录">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- 生成6位数的随机验证码 -->
+    <script>
+        let set_yzm = document.querySelector(".set_yzm");
+        let vertify = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        set_yzm.onclick = function () {
+            let sd = '';
+            for (let i = 0; i < 6; i++) {
+                let random = Math.floor(Math.random() * (vertify.length));
+                sd += vertify[random];
+            }
+            set_yzm.innerHTML = sd;
+            set_yzm.style.color = giveColor();
+        }
+
+        // 生成随机色
+        function getColor() {
+            return Math.round(Math.random() * 255);
+        }
+
+        function giveColor() {
+            let red = getColor();
+            let green = getColor();
+            let blue = getColor();
+            let color = "rgb(" + red + "," + green + "," + blue + ")";
+            return color;
+        }
+    </script>
+
+    <!-- 账号密码登录/手机号登录-table切换 -->
+    <script>
+        $('.zy_span').on('click', function () {
+            $(this).addClass('active-login').siblings().removeClass('active-login');
+            let index = $(this).index();
+            $('.section').eq(index).addClass('show').siblings().removeClass('show');
+        })
+    </script>
+
+
+    <script src="../js/cookie.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
